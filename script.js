@@ -29,7 +29,12 @@ function generateUser() {
       const userID = document.getElementById("userID");
       userID.innerText = `@${data.login}`;
       const created_at = data.created_at;
-      document.getElementById("joningDate").innerHTML = created_at.slice(0, 10);
+      document.getElementById(
+        "joningDate"
+      ).innerHTML = `<i class="fa-regular fa-calendar-days"></i> ${created_at.slice(
+        0,
+        10
+      )}`;
       document.getElementById("bio").innerHTML =
         data.bio === null ? " Bio : NuLL" : `Bio : ${data.bio}`;
       document.getElementById(
