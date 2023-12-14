@@ -16,22 +16,22 @@
   </head>
 
   <body id="body" class="bg-slate-600">
-    <div>
+    <div class="flex m-3 gap-3 font-seriftext-center items-center">
+      <i class="fa-solid fa-user"></i>
       <h3>devfinder</h3>
     </div>
-
     <div class="flex items-center justify-center flex-col flex-wrap">
-      <div class="container flex items-center justify-center">
-        <div class="bg-blue-100 p-2 rounded-lg flex justify-between">
+      <div class="container w-3/4 sm:w-2/4 flex items-center justify-center">
+        <div class="bg-blue-100 rounded-lg p-1 flex justify-between w-full">
           <input
             type="text"
             id="username"
             placeholder="Search GitHub username.."
-            class="border w-full bg-transparent"
+            class="border w-full rounded-lg bg-transparent text-xs"
           />
           <button
             id="buildURLBtn"
-            class="bg-blue-600 text-white p-1 rounded-lg ml-1"
+            class="bg-blue-600 text-white p-0.5 rounded-lg ml-1 text-xs"
           >
             Search
           </button>
