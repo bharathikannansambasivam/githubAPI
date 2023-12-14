@@ -11,7 +11,7 @@ userURL.addEventListener("keydown", function (e) {
 });
 function generateUser() {
   const userURL = document.getElementById("username").value;
-  const githubURL = `https://api.github.com/users/${userURL}`;
+  const githubURL = `https://api.github.com/users/${userURL}`; //
   fetch(githubURL)
     .then((response) => response.json())
     .then((data) => {
@@ -20,8 +20,8 @@ function generateUser() {
       const imageURL = data.avatar_url;
       console.log(imageURL);
       const profile = document.getElementById("profile");
-      profile.style.height = "80px";
-      profile.style.width = "80px";
+      profile.style.height = "70px";
+      profile.style.width = "70px";
       profile.style.borderRadius = "50px";
       profile.src = imageURL;
       //ABOUT
@@ -31,14 +31,16 @@ function generateUser() {
       const created_at = data.created_at;
       document.getElementById("joningDate").innerHTML = created_at.slice(0, 10);
       document.getElementById("bio").innerHTML =
-        data.bio === null ? "NuLL" : data.bio;
-      document.getElementById("repo").innerHTML = `Repos ${data.public_repos}`;
+        data.bio === null ? " Bio : NuLL" : `Bio : ${data.bio}`;
+      document.getElementById(
+        "repo"
+      ).innerHTML = `Repos <br/> ${data.public_repos}`;
       document.getElementById(
         "following"
-      ).innerHTML = ` following ${data.following}`;
+      ).innerHTML = ` Following <br/> ${data.following}`;
       document.getElementById(
         "followers"
-      ).innerHTML = `followers ${data.followers}`;
+      ).innerHTML = `Followers <br/> ${data.followers}`;
       const location = document.getElementById("location");
       location.innerHTML =
         data.location === null
