@@ -36,7 +36,7 @@ function generateUser() {
         10
       )}`;
       document.getElementById("bio").innerHTML =
-        data.bio === null ? " Bio : NuLL" : `Bio : ${data.bio}`;
+        data.bio === null ? " Bio : NULL" : `Bio : ${data.bio}`;
       document.getElementById(
         "repo"
       ).innerHTML = `Repos <br/> ${data.public_repos}`;
@@ -66,6 +66,14 @@ function generateUser() {
           : `<i class="fa-solid fa-building"></i> ${data.company}`;
     })
     .catch(() => {
-      document.getElementById("body").innerHTML = "User Not Available";
+      document.body.innerHTML =
+        '<div style="font-size: 18px; text-align: center; display: flex; height: 100vh; align-items: center; justify-content:center; flex-direction:column;">' +
+        '<i class="fa-solid fa-user-xmark fa-shake fa-lg" style="color: #000000;"></i>' +
+        "<br/> User Not Available" +
+        '<button onclick="reloadPage()" style="font-size: 18px; text-align: center; background:white;  padding: 2px 5px; margin-top:5px; border-radius:20px; " > Search Again</button>';
+      +"</div>";
     });
+}
+function reloadPage() {
+  window.location.reload();
 }
